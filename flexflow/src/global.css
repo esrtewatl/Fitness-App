@@ -1,0 +1,23 @@
+/* Dark mode styles */
+.dark-mode {
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --accent-color: var(--mustard);
+    /* Add more dark mode styles here */
+  }
+  
+  /* Default light mode styles */
+  body {
+    --bg-color: var(--antiflash-white);
+    --text-color: var(--raisin-black);
+    --accent-color: var(--moonstone);
+    /* Add more light mode styles here */
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  /* Additional styling for other components */
+  
