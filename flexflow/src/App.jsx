@@ -8,6 +8,7 @@ import WorkoutTracking from './components/WorkoutTracking';
 import ProgressCharts from './components/ProgressCharts';
 import DarkModeToggle from './components/DarkModeToggle'; // Import the DarkModeToggle component
 import './App.css';
+import Timer from './components/Timer';
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(false);
@@ -24,6 +25,7 @@ function App() {
         <Header />
         <GoalSetting />
         <GoalsList /> 
+        <Timer />
         <WorkoutTracking />
         <ProgressCharts />
         <DarkModeToggle toggleDarkMode={toggleDarkMode} />

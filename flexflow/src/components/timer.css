@@ -1,0 +1,42 @@
+.timer {
+    display: inline-block;
+
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    margin-top: 20px;
+  }
+  
+  .timer-display {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .timer-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+  
+  .timer-controls {
+    margin-top: 10px;
+  }
+  
+  .timer-controls button {
+    background-color: #009fb7;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .timer-controls button:hover {
+    background-color: #00687c;
+  }
+  

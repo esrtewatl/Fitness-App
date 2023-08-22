@@ -1,65 +1,46 @@
 .workout-tracking {
     padding: 20px;
-    border: 1px solid var(--dim-gray);
-    border-radius: 8px;
-    background-color: var(--antiflash-white);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.5s ease;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 10px;
+    max-width: 400px; /* Set a max width for better mobile layout */
   }
   
   .workout-tracking h2 {
+    font-size: 1.5rem;
     margin-bottom: 10px;
-    color: var(--raisin-black);
   }
   
-  .workout-form label {
-    display: block;
-    margin-bottom: 5px;
+  .workout-tracking form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .workout-tracking label {
     font-weight: bold;
-    color: var(--raisin-black);
+    margin-bottom: 5px;
   }
   
-  .workout-form input[type="text"],
-  .workout-form input[type="number"],
-  .workout-form textarea {
-    width: 100%;
+  .workout-tracking input[type="text"],
+  .workout-tracking input[type="number"],
+  .workout-tracking textarea {
     padding: 8px;
-    border: 1px solid var(--dim-gray);
-    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
   
-  .workout-form button {
-    background-color: var(--moonstone);
-    color: var(--antiflash-white);
+  .workout-tracking button {
+    background-color: #009fb7;
+    color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
-  .workout-form button:hover {
-    background-color: var(--mustard);
-  }
-  
-  .workout-form button:active {
-    transform: scale(0.95);
-  }
-  
-  @media (max-width: 768px) {
-    .workout-tracking {
-      padding: 10px;
-    }
+  .workout-tracking button:hover {
+    background-color: #00687c;
   }
   

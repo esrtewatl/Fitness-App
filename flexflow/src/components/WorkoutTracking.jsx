@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { addWorkout, updateWorkout, deleteWorkout } from '../workoutsSlice';
+import './workouttracking.css';
 
-
-import { addWorkout, updateWorkout, deleteWorkout } from '../workoutsSlice'; // Import Redux actions
-import './workouttracking.css'; // Create a CSS file for styling (optional)
 const WorkoutTracking = () => {
   const workouts = useSelector((state) => state.workouts);
   const dispatch = useDispatch();
@@ -54,15 +53,33 @@ const WorkoutTracking = () => {
     <div className="workout-tracking">
       <h2>Track Your Workouts</h2>
       <form onSubmit={handleSubmit}>
-        <label>Exercise:</label>
-        <input type="text" value={exercise} onChange={handleExerciseChange} required />
-        <label>Duration (minutes):</label>
-        <input type="number" value={duration} onChange={handleDurationChange} required />
-        <label>Notes:</label>
-        <textarea value={notes} onChange={handleNotesChange}></textarea>
-        <button type="submit">{editingIndex !== null ? 'Update Workout' : 'Add Workout'}</button>
+        <label htmlFor="exercise">Exercise:</label>
+        <input
+          type="text"
+          id="exercise"
+          value={exercise}
+          onChange={handleExerciseChange}
+          required
+        />
+        <label htmlFor="duration">Duration (minutes):</label>
+        <input
+          type="number"
+          id="duration"
+          value={duration}
+          onChange={handleDurationChange}
+          required
+        />
+        <label htmlFor="notes">Notes:</label>
+        <textarea
+          id="notes"
+          value={notes}
+          onChange={handleNotesChange}
+        ></textarea>
+        <button type="submit">
+          {editingIndex !== null ? 'Update Workout' : 'Add Workout'}
+        </button>
       </form>
-   
+      {/* Render your workout list here */}
     </div>
   );
 };
