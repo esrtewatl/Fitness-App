@@ -1,0 +1,14 @@
+.chart-container {
+    width: 100%;
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .chart-container {
+      max-width: 95%; /* Adjust the maximum width for smaller screens */
+    }
+  }
+  

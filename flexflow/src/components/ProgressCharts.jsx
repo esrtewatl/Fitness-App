@@ -1,11 +1,12 @@
-import React from 'react'
-
-const ProgressCharts = () => {
+import React from 'react';
+import { ResponsiveLine } from '@nivo/line';
+import './progresscharts.css';
+const ProgressCharts = ({ data, options }) => {
   return (
-    <div>
-      
+    <div className="chart-container">
+      <ResponsiveLine data={data} {...options} />
     </div>
-  )
-}
+  );
+};
 
-export default ProgressCharts
+export default ProgressCharts;

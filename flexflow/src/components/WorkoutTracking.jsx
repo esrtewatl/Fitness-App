@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addWorkout, updateWorkout, deleteWorkout } from '../workoutsSlice';
+import { addWorkout, updateWorkout, deleteWorkout} from '../workoutsSlice';
+import ProgressCharts from './ProgressCharts'; // Import your ProgressCharts component
 import './workouttracking.css';
 
 const WorkoutTracking = () => {
@@ -48,6 +49,26 @@ const WorkoutTracking = () => {
   const handleDelete = (index) => {
     dispatch(deleteWorkout(index));
   };
+  const chartData = {
+    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'],
+    datasets: [
+      {
+        label: 'Workout Duration',
+        data: [30, 45, 60, 40, 55],
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const chartOptions = {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  };
 
   return (
     <div className="workout-tracking">
@@ -79,7 +100,12 @@ const WorkoutTracking = () => {
           {editingIndex !== null ? 'Update Workout' : 'Add Workout'}
         </button>
       </form>
+      
       {/* Render your workout list here */}
+   
+      
+      {/* Render your ProgressCharts component */}
+      <ProgressCharts data={chartData} options={chartOptions} />
     </div>
   );
 };

@@ -10,9 +10,11 @@ import DarkModeToggle from './components/DarkModeToggle'; // Import the DarkMode
 import './App.css';
 import Timer from './components/Timer';
 
+
 function App() {
   const [darkMode, setDarkMode] = React.useState(false);
 
+  
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     // Apply dark mode styles to the entire app
@@ -27,7 +29,7 @@ function App() {
         <GoalsList /> 
         <Timer />
         <WorkoutTracking />
-        <ProgressCharts />
+        
         <DarkModeToggle toggleDarkMode={toggleDarkMode} />
       </div>
     </Provider>
