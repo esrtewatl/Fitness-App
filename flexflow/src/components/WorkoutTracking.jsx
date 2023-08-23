@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addWorkout, updateWorkout, deleteWorkout} from '../workoutsSlice';
+import { addWorkout, updateWorkout, deleteWorkout } from '../workoutsSlice';
 import ProgressCharts from './ProgressCharts'; // Import your ProgressCharts component
 import './workouttracking.css';
 
 const WorkoutTracking = () => {
   const workouts = useSelector((state) => state.workouts);
+
+  // Extract workout durations for the chart data
+  const workoutDurations = workouts.map((workout) => workout.duration);
+
   const dispatch = useDispatch();
   const [exercise, setExercise] = useState('');
   const [duration, setDuration] = useState('');
@@ -37,6 +41,9 @@ const WorkoutTracking = () => {
     setExercise('');
     setDuration('');
     setNotes('');
+
+    // Update local storage with the new workouts
+    localStorage.setItem('workouts', JSON.stringify(workouts));
   };
 
   const handleEdit = (index, workout) => {
@@ -49,26 +56,12 @@ const WorkoutTracking = () => {
   const handleDelete = (index) => {
     dispatch(deleteWorkout(index));
   };
-  const chartData = {
-    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'],
-    datasets: [
-      {
-        label: 'Workout Duration',
-        data: [30, 45, 60, 40, 55],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1,
-      },
-    ],
-  };
 
-  const chartOptions = {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  };
+
+  const chartData = workouts.map((workout, index) => ({
+    day: `Day ${index + 1}`,
+    duration: workout.duration,
+  }));
 
   return (
     <div className="workout-tracking">
@@ -100,12 +93,34 @@ const WorkoutTracking = () => {
           {editingIndex !== null ? 'Update Workout' : 'Add Workout'}
         </button>
       </form>
-      
-      {/* Render your workout list here */}
-   
-      
+
+      <div className="workout-list">
+        <h3>Workout List</h3>
+        {workouts.map((workout, index) => (
+          <div key={index} className="workout-item">
+            <div>
+              <strong>Exercise:</strong> {workout.exercise}
+            </div>
+            <div>
+              <strong>Duration:</strong> {workout.duration} minutes
+            </div>
+            <div>
+              <strong>Notes:</strong> {workout.notes}
+            </div>
+            <div>
+              <button onClick={() => handleEdit(index, workout)}>Edit</button>
+              <button onClick={() => handleDelete(index)}>Delete</button>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Render your ProgressCharts component */}
-      <ProgressCharts data={chartData} options={chartOptions} />
+      {/* Render your ProgressCharts component */}
+{/* Render your ProgressCharts component */}
+<ProgressCharts data={chartData} />
+
+
     </div>
   );
 };

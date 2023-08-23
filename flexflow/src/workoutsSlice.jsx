@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const savedWorkouts = JSON.parse(localStorage.getItem('workouts')) || [];
 const workoutsSlice = createSlice({
   name: 'workouts',
-  initialState: [], // Make sure the initial state is an empty array
+  initialState: savedWorkouts,
   reducers: {
     setWorkouts: (state, action) => {
       return action.payload;

@@ -1,25 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addGoal } from '../goalsSlice'; // Import the Redux action
-import "./goalsetting.css";
+import { addGoal } from '../goalsSlice';
+import './goalsetting.css';
+
 const GoalSetting = () => {
   const dispatch = useDispatch();
   const [goal, setGoal] = useState('');
 
+  useEffect(() => {
+    const storedGoal = localStorage.getItem('storedGoal');
+    if (storedGoal) {
+      setGoal(storedGoal);
+    }
+  }, []);
+
   const handleGoalChange = (e) => {
-    setGoal(e.target.value);
+    const newValue = e.target.value;
+    setGoal(newValue);
+    localStorage.setItem('storedGoal', newValue);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (goal.trim() !== '') {
-      console.log('Submitting goal:', goal); // Check if this log appears
-      dispatch(addGoal(goal)); // Dispatch the action to add the goal
-      console.log('Goal added to state:', goal); // Check if this log appears
-      setGoal(''); // Clear the input field
+      dispatch(addGoal(goal));
+      setGoal('');
+      localStorage.removeItem('storedGoal'); // Clear the stored goal after submitting
     }
   };
-  
+
   return (
     <div className="goal-setting">
       <h2>Set Your Fitness Goals</h2>

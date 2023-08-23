@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateGoal, deleteGoal } from '../goalsSlice'; // Import Redux actions
-import "./goalslist.css";
+import { updateGoal, deleteGoal } from '../goalsSlice';
+import './goalslist.css';
 
 const GoalsList = () => {
   const goals = useSelector((state) => state.goals);
   const [editedGoal, setEditedGoal] = useState('');
   const [editIndex, setEditIndex] = useState(null);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const storedGoals = JSON.parse(localStorage.getItem('fitnessGoals'));
+    if (storedGoals) {
+      dispatch({ type: 'goals/goalsLoaded', payload: storedGoals });
+    }
+  }, [dispatch]);
 
   const handleEdit = (index, goal) => {
     setEditIndex(index);

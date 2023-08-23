@@ -43,4 +43,62 @@
   .workout-tracking button:hover {
     background-color: #00687c;
   }
+  /* Style for the workout list container */
+.workout-list {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
   
+  /* Style for each workout item */
+  .workout-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .workout-item:hover {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for workout item details */
+  .workout-item div {
+    margin-bottom: 5px;
+  }
+  
+  /* Style for buttons */
+  .workout-item button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .workout-item button:hover {
+    background-color: #0056b3;
+  }
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+    .workout-list {
+      padding: 5px;
+    }
+  
+    .workout-item {
+      margin: 0;
+      border: none;
+      padding: 5px;
+    }
+  
+    .workout-item button {
+      padding: 3px 6px;
+      font-size: 12px;
+    }
+  }
+    

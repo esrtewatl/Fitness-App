@@ -1,14 +1,44 @@
-.chart-container {
-    width: 100%;
-    max-width: 800px; /* Adjust the maximum width as needed */
-    margin: 0 auto;
-    box-sizing: border-box;
+.progress-charts {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.progress-charts h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Victory Chart Styles */
+.victory-chart {
+  overflow: visible;
+}
+
+.victory-axis-tick {
+  font-size: 0.8rem;
+  fill: #666;
+}
+
+.victory-axis-label {
+  font-size: 1rem;
+  fill: #333;
+}
+
+/* Apply additional styling for responsiveness */
+@media screen and (max-width: 600px) {
+  .progress-charts {
+    padding: 1rem;
   }
-  
-  /* Media query for responsiveness */
-  @media (max-width: 768px) {
-    .chart-container {
-      max-width: 95%; /* Adjust the maximum width for smaller screens */
-    }
+
+  .victory-axis-tick {
+    font-size: 0.7rem;
   }
-  
+
+  .victory-axis-label {
+    font-size: 0.9rem;
+  }
+}
