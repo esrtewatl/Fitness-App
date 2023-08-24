@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const savedWorkouts = JSON.parse(localStorage.getItem('workouts')) || [];
+
 const workoutsSlice = createSlice({
   name: 'workouts',
   initialState: savedWorkouts,
@@ -12,8 +13,8 @@ const workoutsSlice = createSlice({
       state.push(action.payload);
     },
     updateWorkout: (state, action) => {
-      const { index, exercise, duration, notes } = action.payload;
-      state[index] = { exercise, duration, notes };
+      const { index, exercise, duration, notes, day } = action.payload;
+      state[index] = { exercise, duration, notes, day };
     },
     deleteWorkout: (state, action) => {
       const index = action.payload;

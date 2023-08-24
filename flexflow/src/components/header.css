@@ -1,0 +1,22 @@
+/* header.css */
+
+header {
+    margin-top: 1em;
+    margin-left: 0.5em;
+
+    color: rgb(66, 252, 190);
+    font-family: 'Arimo', sans-serif;
+    text-shadow: 2px 2px 4px var(--dark-accent);
+    font-size: large;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  }
+  
+  /* Light mode styles */
+  @media (prefers-color-scheme: light) {
+    header {
+   
+      color: var(--light-text);
+      text-shadow: 2px 2px 4px var(--light-accent);
+    }
+  }
+  

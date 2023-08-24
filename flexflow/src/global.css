@@ -1,23 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+
+/* Color Palette */
+:root {
+  /* Dark mode */
+  --dark-bg: #1a1a1a;
+  --dark-text: #ffffff;
+  --dark-accent: #00aqua;
+
+  /* Light mode */
+  --light-bg: #f5f5f5;
+  --light-text: #333333;
+  --light-accent: aquamarine; /* Changed from var(--light-accent) to aquamarine */
+
+  /* Gradients */
+  --gradient-1: linear-gradient(to right, #0f4c75, #3282b8);
+  --gradient-2: linear-gradient(to right, #373b44, #4286f4);
+  --gradient-3: linear-gradient(to right, #0a192f, #33415c);
+
+  /* Aqua accent */
+  --aqua: #00aqua;
+}
+
 /* Dark mode styles */
 .dark-mode {
-    --bg-color: var(--dark-bg);
-    --text-color: var(--dark-text);
-    --accent-color: var(--mustard);
-    /* Add more dark mode styles here */
-  }
-  
-  /* Default light mode styles */
-  body {
-    --bg-color: var(--antiflash-white);
-    --text-color: var(--raisin-black);
-    --accent-color: var(--moonstone);
-    /* Add more light mode styles here */
-  }
-  
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
-  
-  /* Additional styling for other components */
-  
+  --bg-color: var(--dark-bg);
+  --text-color: var(--dark-text);
+  --accent-color: var(--dark-accent);
+}
+
+/* Light mode styles */
+body {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  --bg-color: var(--light-bg);
+  --text-color: black;
+  --accent-color: var(--light-accent);
+}
+
+/* Additional styling for other components */

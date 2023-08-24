@@ -1,0 +1,25 @@
+/* Dark mode styles */
+.dark-mode {
+    --bg-color: #222; /* Dark background color */
+    --text-color: #fff; /* Light text color */
+    --accent-color: aquamarine; /* Accent color */
+    
+    /* Add more dark mode styles here */
+  }
+  
+  /* Default light mode styles */
+  body {
+    --bg-color: aquamarine; /* Aqua background color */
+    --text-color: #000; /* Dark text color */
+    --accent-color: #007acc; /* Default accent color */
+    text-shadow: 1px 1px 2px rgba(200, 200, 200, 0.5);
+    /* Add more light mode styles here */
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  /* Additional styling for other components */
+  

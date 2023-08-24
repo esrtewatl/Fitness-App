@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateGoal, deleteGoal } from '../goalsSlice';
+import { updateGoal, deleteGoal, loadGoals } from '../goalsSlice'; // Make sure to import the action to load goals
 import './goalslist.css';
 
 const GoalsList = () => {
@@ -12,7 +12,7 @@ const GoalsList = () => {
   useEffect(() => {
     const storedGoals = JSON.parse(localStorage.getItem('fitnessGoals'));
     if (storedGoals) {
-      dispatch({ type: 'goals/goalsLoaded', payload: storedGoals });
+      dispatch(setGoals(storedGoals)); // Dispatch the action to load goals
     }
   }, [dispatch]);
 

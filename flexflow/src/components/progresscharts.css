@@ -1,4 +1,19 @@
-.progress-charts {
+/* Dark mode styles */
+.chart-container.dark-mode {
+  background-color: #111;
+  color: white;
+  box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode styles */
+.chart-container.light-mode {
+  background-color: #f0f0f0;
+  color: var(--raisin-black);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Common styles for both dark and light modes */
+.chart-container {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -7,10 +22,10 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.progress-charts h3 {
+.chart-container h3 {
   text-align: center;
   margin-bottom: 1rem;
-  color: #333;
+  font-size: 1.5rem;
 }
 
 /* Victory Chart Styles */
@@ -20,17 +35,17 @@
 
 .victory-axis-tick {
   font-size: 0.8rem;
-  fill: #666;
+  fill: var(--dim-gray);
 }
 
 .victory-axis-label {
   font-size: 1rem;
-  fill: #333;
+  fill: var(--raisin-black);
 }
 
 /* Apply additional styling for responsiveness */
 @media screen and (max-width: 600px) {
-  .progress-charts {
+  .chart-container {
     padding: 1rem;
   }
 

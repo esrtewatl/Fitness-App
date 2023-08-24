@@ -18,9 +18,12 @@ const goalsSlice = createSlice({
       const index = action.payload;
       state.splice(index, 1);
     },
+    loadGoals: (state, action) => {
+      return action.payload;
+    }, // Add this loadGoals action
   },
 });
 
-export const { setGoals, addGoal, updateGoal, deleteGoal } = goalsSlice.actions;
+export const { setGoals, addGoal, updateGoal, deleteGoal, loadGoals } = goalsSlice.actions;
 
 export default goalsSlice.reducer;

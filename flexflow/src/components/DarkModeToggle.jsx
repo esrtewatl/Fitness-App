@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
+import './darkmode.css';
 
-const DarkModeToggle = () => {
+const DarkModeToggle = ({ toggleDarkMode }) => {
   const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => {
+  const handleDarkModeToggle = () => {
     setDarkMode(!darkMode);
-    // You can implement logic to apply dark mode styles to the app here
+    toggleDarkMode(!darkMode); // Call the parent component's toggleDarkMode function
   };
 
   return (
-    <button onClick={toggleDarkMode}>
-      {darkMode ? 'Light Mode' : 'Dark Mode'}
-    </button>
+    <div className={`dm-container ${darkMode ? 'dark-mode' : ''}`}>
+      <button className='dmbutton' onClick={handleDarkModeToggle}>
+        {darkMode ? 'Light Mode' : 'Dark Mode'}
+      </button>
+    </div>
   );
 };
 

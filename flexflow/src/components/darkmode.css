@@ -1,0 +1,40 @@
+/* darkmode.css */
+
+/* Dark mode styles */
+.dm-container {
+   background-color: var(--dark-bg);
+    border: solid 1px;
+    border-bottom: 22px var(--dark-accent);
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .dmbutton {
+    margin-top: 0.3em;
+    color: var(--dark-text);
+    background-color:rgb(88, 179, 149);
+    border-radius: 0.3em;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .dmbutton:hover {
+    border-color: var(--dark-accent);
+  }
+  
+  /* Light mode styles */
+  @media (prefers-color-scheme: light) {
+    .dm-container {
+      border-color: var(--light-accent);
+    }
+    
+    .dmbutton {
+      color: var(--light-text);
+      background-color: var(--light-bg);
+    }
+    
+    .dmbutton:hover {
+      border-color: var(--light-accent);
+    }
+  }
+  

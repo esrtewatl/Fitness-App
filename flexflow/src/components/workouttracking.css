@@ -1,104 +1,244 @@
+/* Dark mode styles */
+.workout-tracking.dark-mode {
+  background-color: #111;
+  color: white;
+  box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .workout-tracking label {
+  color: var(--dark-text);
+}
+
+.dark-mode .workout-tracking input[type="text"],
+.dark-mode .workout-tracking input[type="number"],
+.dark-mode .workout-tracking textarea {
+  border: 1px solid var(--dim-gray);
+}
+
+.dark-mode .workout-tracking button {
+  background-color: #009fb7;
+}
+
+.dark-mode .workout-tracking button:hover {
+  background-color: #00687c;
+}
+
+.dark-mode .workout-list {
+  border: 1px solid var(--dim-gray);
+  background-color: #444;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .workout-item {
+  border: 1px solid var(--dim-gray);
+  background-color: #555;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .workout-item button {
+  background-color: #007bff;
+}
+
+.dark-mode .workout-item button:hover {
+  background-color: #0056b3;
+}
+
+/* Light mode styles */
+.workout-tracking.light-mode {
+  background-color: #f0f0f0;
+  color: var(--raisin-black);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Common styles for both dark and light modes */
 .workout-tracking {
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    margin: 10px;
-    max-width: 400px; /* Set a max width for better mobile layout */
-  }
-  
-  .workout-tracking h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .workout-tracking form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .workout-tracking label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .workout-tracking input[type="text"],
-  .workout-tracking input[type="number"],
-  .workout-tracking textarea {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .workout-tracking button {
-    background-color: #009fb7;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .workout-tracking button:hover {
-    background-color: #00687c;
-  }
-  /* Style for the workout list container */
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+.workout-tracking h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.workout-tracking label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.workout-tracking input[type="text"],
+.workout-tracking input[type="number"],
+.workout-tracking textarea {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.workout-tracking button {
+  background-color: #009fb7;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.workout-tracking button:hover {
+  background-color: #00687c;
+}
+
+/* Dark mode styles for workout list */
+.workout-list.dark-mode {
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #444;
+}
+
+/* Light mode styles for workout list */
+.workout-list.light-mode {
+  background-color: #f9f9f9;
+  color: var(--raisin-black);
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
 .workout-list {
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style for each workout item */
-  .workout-item {
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #ffffff;
-    transition: box-shadow 0.2s ease;
-  }
-  
-  .workout-item:hover {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style for workout item details */
-  .workout-item div {
-    margin-bottom: 5px;
-  }
-  
-  /* Style for buttons */
-  .workout-item button {
-    padding: 5px 10px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .workout-item button:hover {
-    background-color: #0056b3;
-  }
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.workout-item {
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  transition: box-shadow 0.2s ease;
+}
+
+.workout-item:hover {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.workout-item div {
+  margin-bottom: 0.5rem;
+}
+
+.workout-item button {
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.workout-item button:hover {
+  background-color: #0056b3;
+}
+
 /* Responsive CSS */
 @media screen and (max-width: 768px) {
-    .workout-list {
-      padding: 5px;
-    }
-  
-    .workout-item {
-      margin: 0;
-      border: none;
-      padding: 5px;
-    }
-  
-    .workout-item button {
-      padding: 3px 6px;
-      font-size: 12px;
-    }
+  .workout-list {
+    padding: 0.5rem;
   }
-    
+
+  .workout-item {
+    margin: 0;
+    border: none;
+    padding: 0.5rem;
+  }
+
+  .workout-item button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+.workout-tracking input[type="number"],
+.workout-tracking textarea {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.workout-tracking button {
+  background-color: #009fb7;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.workout-tracking button:hover {
+  background-color: #00687c;
+}
+
+.workout-list {
+  margin-top: 2rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.workout-item {
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  transition: box-shadow 0.2s ease;
+}
+
+.workout-item:hover {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.workout-item div {
+  margin-bottom: 0.5rem;
+}
+
+.workout-item button {
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.workout-item button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  .workout-list {
+    padding: 0.5rem;
+  }
+
+  .workout-item {
+    margin: 0;
+    border: none;
+    padding: 0.5rem;
+  }
+
+  .workout-item button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
