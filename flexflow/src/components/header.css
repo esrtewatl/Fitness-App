@@ -1,22 +1,52 @@
-/* header.css */
-
+/* Common styles */
 header {
-    margin-top: 1em;
-    margin-left: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: .3em;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-top: 0.5em;
+  font-family: 'Arimo', sans-serif;
+  font-size: large;
+ 
+}
 
-    color: rgb(66, 252, 190);
-    font-family: 'Arimo', sans-serif;
-    text-shadow: 2px 2px 4px var(--dark-accent);
-    font-size: large;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-  }
+/* Light mode styles */
+@media (prefers-color-scheme: light) {
+  :root {
   
-  /* Light mode styles */
-  @media (prefers-color-scheme: light) {
-    header {
-   
-      color: var(--light-text);
-      text-shadow: 2px 2px 4px var(--light-accent);
+    --text-color: #000000;
+    --accent-color: #6ec6e9;
+    --text-shadow-accent: 2px rgba(254, 248, 248, 0.963);
+  }
+
+  header {
+
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px var(--text-shadow-accent);
+  }
+
+  .logoutBtn{
+    display: block;
+    margin: auto;
+font-size: large;
+background-color: #009fb7;
+color: white;
     }
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+
+
+  header {
+ background-color: #000000;
+    color: white;
+    text-shadow: 2px 2px 4px var(--text-shadow-accent);
   }
-  
+
+  header button {
+    background-color: var(--accent-color);
+    color: var(--background);
+  }
+}

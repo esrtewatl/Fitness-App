@@ -40,7 +40,8 @@
 .goals-list {
   text-align: center;
   padding: 20px;
-  background-color: #f5f5f5;
+  background: linear-gradient(to bottom, aqua, #6ec6e9);
+
 }
 
 .goals-list h2 {

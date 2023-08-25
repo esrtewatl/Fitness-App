@@ -6,7 +6,7 @@ import GoalSetting from './components/GoalSetting';
 import GoalsList from './components/GoalsList';
 import WorkoutTracking from './components/WorkoutTracking';
 import ProgressCharts from './components/ProgressCharts';
-import DarkModeToggle from './components/DarkModeToggle';
+
 import Timer from './components/Timer';
 import Login from './components/Login';
 import './App.css';
@@ -22,7 +22,6 @@ const toggleDarkMode = (value) => {
   document.body.classList.toggle('dark-mode', value);
 };
 
-
   const handleLogin = (username) => {
     setLoggedInUser(username);
     localStorage.setItem('loggedInUser', username);
@@ -37,7 +36,7 @@ const toggleDarkMode = (value) => {
   return (
     <Provider store={store}>
       <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
-        <DarkModeToggle toggleDarkMode={toggleDarkMode} />
+       
         <Header loggedInUser={loggedInUser} handleLogout={handleLogout} />
 
         {loggedInUser ? (

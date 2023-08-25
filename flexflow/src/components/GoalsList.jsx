@@ -35,7 +35,7 @@ const GoalsList = () => {
 
   return (
     <div className="goals-list">
-      <h2>Your Fitness Goals</h2>
+      <h2>Your Fitness Goals This Session</h2>
       <ul>
         {goals.map((goal, index) => (
           <li key={index}>
